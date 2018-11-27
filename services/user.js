@@ -9,7 +9,7 @@ import jwt from 'jsonwebtoken'
     jwt.sign({ userId: user.id}, secret, {expiresIn: '30d'})
 
     export const register = async (firstName, lastName, email, password) => {
-      const passwordHash = await bcrypt.hash(password, salt)
+      const passwordHash = await bcrypt.hash(password, 12)
       return models.User.create({ firstName, lastName, email, passwordHash })
     }
   

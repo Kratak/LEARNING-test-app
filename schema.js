@@ -4,6 +4,7 @@ export default`
      firstName: String!
      lastName: String!
      email: String!
+     passwordHash: String!
      createdAt: String!
      updatedAt: String!
 

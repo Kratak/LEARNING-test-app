@@ -1,4 +1,8 @@
+
 import * as userService from './services/user'
+
+
+
 
 export default {
     Query: {
@@ -13,7 +17,7 @@ export default {
     Mutation: {
 
         registerUser: (parent, { firstName, lastName, email, password } , { models })=>
-            userService.register({ firstName, lastName, email, password }),
+            userService.register(firstName, lastName, email, password),
 
         loginUser:( parent, { email, password }, { models })=>
             userService.login( email, password ),
