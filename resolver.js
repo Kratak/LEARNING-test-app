@@ -1,3 +1,5 @@
+import * as userService from './services/user'
+
 export default {
     Query: {
 
@@ -10,8 +12,11 @@ export default {
 
     Mutation: {
 
-        registerUser: (parent, { firstName, lastName, email, passwordHash} , { models })=>
-            models.User.create({ firstName, lastName, email, passwordHash }),
+        registerUser: (parent, { firstName, lastName, email, password } , { models })=>
+            userService.register({ firstName, lastName, email, password }),
+
+        loginUser:( parent, { email, password }, { models })=>
+            userService.login( email, password ),
 
         updateUser: ( parent, { id, firstName, email }, { models }) =>
             models.User.update({ firstName, email }, { where: { id } }),

@@ -2,8 +2,8 @@ import express from 'express'
 import graphqlHTTP from 'express-graphql'
 import { makeExecutableSchema } from 'graphql-tools'
 
-import resolvers from './resolver.gql'
-import typeDefs from './schema.gql'
+import resolvers from './resolver'
+import typeDefs from './schema'
 import models from './db/models'
 
 const schema = makeExecutableSchema({
